@@ -1,11 +1,19 @@
-target/
+# IntelliJ
 .idea/
+**/.idea/
 *.iml
-.vscode/
+
+# Maven
+**/target/
+
+# Environment and secrets
 .env
-.DS_Store
+.env.*
+!.env.example
+
+# Logs
 *.log
-# Sensitive application configuration
-src/main/resources/application.properties
-smoke-test.ps1
-README_old.md
+
+# OS files
+.DS_Store
+Thumbs.db
