@@ -5,7 +5,6 @@ target/
 .env
 .DS_Store
 *.log
-# Sensitive application configuration
 src/main/resources/application.properties
 smoke-test.ps1
 README_old.md
