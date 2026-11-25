@@ -12,4 +12,5 @@ public interface NotificationRepository extends JpaRepository<Notification, Long
     List<Notification> findTop100ByUser_IdOrderByIdDesc(Long userId);
     long countByUser_IdAndSeenFalse(Long userId);
     List<Notification> findByUser_IdAndSeenFalse(Long userId);
+    boolean existsByUser_IdAndBookingIdAndTypeAndSeenFalse(Long userId, Long bookingId, String type);
 }

@@ -46,6 +46,11 @@ public class NotificationService {
     public void markRead(Long userId, Long id) {
         repo.findById(id).filter(n -> n.getUser().getId().equals(userId)).ifPresent(n -> n.setSeen(true));
     }
+    @Transactional
+    public void notifyOnce(Long userId, String type, String message, Long bookingId) {
+        if (repo.existsByUser_IdAndBookingIdAndTypeAndSeenFalse(userId, bookingId, type)) return;
+        notify(userId, type, message, bookingId);
+    }
 
     @Transactional
     public void markAllRead(Long userId) { repo.findByUser_IdAndSeenFalse(userId).forEach(n -> n.setSeen(true)); }

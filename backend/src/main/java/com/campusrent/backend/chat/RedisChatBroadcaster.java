@@ -11,10 +11,7 @@ import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 
 import java.nio.charset.StandardCharsets;
 
-/**
- * Multi-instance mode (app.chat.redis-enabled=true): the message id goes through Redis pub/sub and EVERY
- * instance delivers it to its own connected WebSocket clients.
- */
+
 @Configuration
 @RequiredArgsConstructor
 @ConditionalOnProperty(name = "app.chat.redis-enabled", havingValue = "true")
